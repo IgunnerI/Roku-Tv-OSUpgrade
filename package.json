@@ -1,0 +1,19 @@
+{
+  "name": "amber-launcher",
+  "version": "0.1.1",
+  "private": true,
+  "description": "Minimal, static, privacy-first launcher channel for Roku TV",
+  "scripts": {
+    "lint": "bsc --create-package=false",
+    "test": "sh scripts/test.sh",
+    "audit:privacy": "node scripts/privacy-audit.mjs",
+    "package": "sh scripts/package.sh",
+    "check": "npm run lint && npm test && npm run audit:privacy && npm run audit:tokens",
+    "deploy": "sh scripts/deploy.sh",
+    "audit:tokens": "node scripts/token-audit.mjs"
+  },
+  "devDependencies": {
+    "brighterscript": "0.65.27",
+    "brs": "0.45.0"
+  }
+}

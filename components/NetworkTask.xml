@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Runs off the render thread. Publishes link status on change (event-driven,
+     no polling) and runs diagnostics only when "request" is set. -->
+<component name="NetworkTask" extends="Task">
+    <interface>
+        <!-- Set to a new run id to start a diagnostics run. -->
+        <field id="request" type="integer" alwaysNotify="true" />
+        <field id="status" type="assocarray" />
+        <field id="progress" type="assocarray" />
+        <field id="result" type="assocarray" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/NetworkTask.brs" />
+    <script type="text/brightscript" uri="pkg:/components/lib/Diagnostics.brs" />
+</component>

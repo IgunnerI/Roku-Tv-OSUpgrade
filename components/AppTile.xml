@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One tile: a frame rectangle (border, amber when focused), a body, and two
+     labels. Four nodes; focus changes only the frame's color and size. -->
+<component name="AppTile" extends="Group">
+    <interface>
+        <field id="label" type="string" onChange="onLabel" />
+        <field id="status" type="string" onChange="onStatus" />
+        <field id="focused" type="boolean" onChange="onFocused" />
+        <field id="size" type="vector2d" onChange="onSize" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/AppTile.brs" />
+    <children>
+        <Rectangle id="frame" color="0x333333FF" />
+        <Rectangle id="body" color="0x171717FF" />
+        <Label id="name" font="font:MediumSystemFont" color="0xF2F0EAFF" vertAlign="center" />
+        <Label id="sub" font="font:SmallSystemFont" color="0x969696FF" vertAlign="center" />
+    </children>
+</component>

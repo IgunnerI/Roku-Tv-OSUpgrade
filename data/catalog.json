@@ -1,0 +1,10 @@
+[
+    { "id": "netflix", "label": "Netflix", "kind": "store_page", "channelId": "12" },
+    { "id": "youtube", "label": "YouTube", "kind": "store_page", "channelId": "837" },
+    { "id": "prime", "label": "Prime Video", "kind": "store_page", "channelId": "13" },
+    { "id": "disney", "label": "Disney+", "kind": "store_page", "channelId": "291097" },
+    { "id": "hulu", "label": "Hulu", "kind": "store_page", "channelId": "2285" },
+    { "id": "network", "label": "Network check", "kind": "in_app", "target": "diagnostics" },
+    { "id": "privacy", "label": "Privacy", "kind": "in_app", "target": "privacy" },
+    { "id": "settings", "label": "Settings", "kind": "in_app", "target": "network" }
+]

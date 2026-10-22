@@ -1,0 +1,12 @@
+{
+  "rootDir": ".",
+  "files": [
+    "manifest",
+    "source/**/*",
+    "components/**/*",
+    "data/**/*",
+    "images/**/*"
+  ],
+  "retainStagingDir": false,
+  "diagnosticFilters": []
+}

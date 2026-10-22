@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- On-demand menu. Shown and hidden instantly (no slide). The scene owns
+     key handling and sets focusIndex. -->
+<component name="NavigationDrawer" extends="Group">
+    <interface>
+        <field id="focusIndex" type="integer" onChange="onFocusIndex" />
+        <field id="items" type="array" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/NavigationDrawer.brs" />
+    <children>
+        <Rectangle id="panel" width="480" height="1080" color="0x171717FF" />
+        <Rectangle id="edge" translation="[480, 0]" width="2" height="1080" color="0x333333FF" />
+        <Label id="title" translation="[64, 60]" font="font:SmallSystemFont" color="0x969696FF" text="Menu" />
+        <Rectangle id="bar" width="6" height="48" color="0xF2B84BFF" />
+        <Group id="list" />
+    </children>
+</component>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- App-level settings. Section list on the left, content and up to two
+     buttons on the right. The scene forwards keys via handleKey(). -->
+<component name="SettingsScreen" extends="Group">
+    <interface>
+        <!-- Input: see SettingsContent() for the shape. -->
+        <field id="data" type="assocarray" onChange="render" />
+        <!-- Output: set to a button's action when it is selected. -->
+        <field id="action" type="string" alwaysNotify="true" />
+        <function name="open" />
+        <function name="handleKey" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/SettingsScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/components/lib/SettingsContent.brs" />
+    <script type="text/brightscript" uri="pkg:/components/lib/Diagnostics.brs" />
+    <children>
+        <Label id="title" translation="[146, 60]" font="font:MediumBoldSystemFont" color="0xF2F0EAFF" text="Settings" />
+        <Rectangle id="menuBar" width="6" height="48" color="0xF2B84BFF" />
+        <Group id="menu" />
+        <Rectangle id="divider" translation="[640, 170]" width="2" height="760" color="0x333333FF" />
+        <Label id="heading" translation="[700, 170]" width="1074" font="font:MediumBoldSystemFont" color="0xF2F0EAFF" />
+        <Label id="body" translation="[700, 240]" width="1074" height="580" wrap="true" lineSpacing="6" font="font:SmallSystemFont" color="0xF2F0EAFF" />
+        <Group id="buttons" translation="[700, 850]" />
+        <Label id="hint" translation="[146, 966]" font="font:SmallSystemFont" color="0x969696FF" text="Back  Return" />
+        <Label id="appScope" translation="[700, 966]" width="1074" horizAlign="right" font="font:SmallSystemFont" color="0x969696FF" text="App settings only. Roku system settings are in Roku's Home menu." />
+    </children>
+</component>

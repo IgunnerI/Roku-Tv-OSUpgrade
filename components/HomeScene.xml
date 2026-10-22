@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Root scene. Owns all key handling: focus stays on the scene and each mode
+     (home, drawer, settings) draws its own static focus indicator. -->
+<component name="HomeScene" extends="Scene">
+    <script type="text/brightscript" uri="pkg:/components/HomeScene.brs" />
+    <script type="text/brightscript" uri="pkg:/components/lib/FocusNav.brs" />
+    <script type="text/brightscript" uri="pkg:/components/lib/Catalog.brs" />
+    <script type="text/brightscript" uri="pkg:/components/lib/RecentUsage.brs" />
+    <script type="text/brightscript" uri="pkg:/components/lib/Diagnostics.brs" />
+    <script type="text/brightscript" uri="pkg:/components/lib/SettingsContent.brs" />
+    <children>
+        <Rectangle id="background" width="1920" height="1080" color="0x080808FF" />
+        <Group id="home">
+            <Label id="brand" translation="[146, 60]" font="font:MediumBoldSystemFont" color="0xF2F0EAFF" text="Amber" />
+            <Rectangle id="netDot" translation="[1590, 78]" width="14" height="14" color="0x333333FF" />
+            <Label id="netLabel" translation="[1616, 64]" width="158" height="44" vertAlign="center" font="font:SmallSystemFont" color="0x969696FF" />
+            <Label id="recentHeading" translation="[146, 170]" font="font:SmallSystemFont" color="0x969696FF" text="Recent" />
+            <Label id="recentEmpty" translation="[146, 236]" width="1628" font="font:SmallSystemFont" color="0x969696FF" text="Apps you open from this launcher will appear here." />
+            <Group id="recentRow" translation="[146, 220]" />
+            <Label id="appsHeading" translation="[146, 380]" font="font:SmallSystemFont" color="0x969696FF" text="Apps" />
+            <Group id="grid" translation="[146, 430]" />
+            <Label id="message" translation="[146, 900]" width="1628" height="44" font="font:SmallSystemFont" color="0xF2F0EAFF" />
+            <Label id="hint" translation="[146, 966]" font="font:SmallSystemFont" color="0x969696FF" text="OK  Open      *  Menu      Back  Exit" />
+        </Group>
+        <SettingsScreen id="settings" visible="false" />
+        <NavigationDrawer id="drawer" visible="false" />
+    </children>
+</component>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Runs roAppManager calls off the render thread: an installed check at
+     startup, then Channel Store pages on request. -->
+<component name="AppTask" extends="Task">
+    <interface>
+        <!-- Channel ids to check; set before control = "RUN". -->
+        <field id="checkIds" type="array" />
+        <field id="installed" type="assocarray" />
+        <!-- Set to a channel id to open its Channel Store page. -->
+        <field id="openStore" type="string" alwaysNotify="true" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/AppTask.brs" />
+</component>
