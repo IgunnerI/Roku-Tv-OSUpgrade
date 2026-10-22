@@ -27,6 +27,6 @@
 
 | Device | Roku OS | UI | Startup | Held D-pad | Memory start → 10 min | Nodes start → end |
 |---|---|---|---|---|---|---|
-| _not yet measured_ | | | | | | |
+| onn Roku TV 100058007 (hardware ID 8515X) | 16.0 | _not recorded_ | _not measured_ | _not measured_ | _not measured_ | _not measured_ |
 
 The 16 ms per-event target can't be confirmed without on-device profiling. If a target is missed, record the figure here before changing code.

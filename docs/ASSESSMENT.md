@@ -8,6 +8,18 @@ Date: 2026-10-22. Phase 1 of the project brief.
 - No target device, Roku OS version, or remote model was documented.
 - Conclusion: a new project. Nothing existing was overwritten.
 
+## Target device (from the owner's System info screens, 2026-10-22)
+
+| Field | Value |
+|---|---|
+| TV | onn Roku TV, model 100058007 |
+| Hardware ID | 8515X |
+| Roku OS | 16.0 |
+| Connection | Wireless (2.4 GHz channel 1; signal reported "Excellent") |
+| UI resolution, panel size, remote model | Not yet known: check Settings › System › About, and the remote (see "Remote buttons") |
+
+Roku OS 16.0 satisfies the Roku OS 11+ assumption below. The API reference used here dates from 2022, so behavior added or restricted in later OS versions is unverified until the app runs on this TV. Serial number, device ID, MAC address and account details are deliberately not recorded in this repository.
+
 ## How API facts were checked
 
 `developer.roku.com` could not be reached from the build environment (DNS failure), so the live documentation was **not** read. API signatures were checked against the machine-readable copy of Roku's BrightScript/SceneGraph reference shipped inside BrighterScript 0.65.27 (`roku-types/data.json`, generated 2022-11-02 from developer.roku.com). That source is the official reference, but it is a 2022 snapshot. Anything marked "convention" below comes from general Roku development practice and was not confirmed against either source.
@@ -72,5 +84,5 @@ None of this was tested on a remote. Compatibility with specific remote models i
 
 ## Decisions and assumptions
 
-- **Target:** Roku TVs on Roku OS 11 or later (assumption, since no device was specified). FHD UI coordinates (`ui_resolutions=fhd`, 1920×1080); Roku scales for HD devices.
+- **Target:** the onn Roku TV above (Roku OS 16.0); Roku OS 11 or later in general. FHD UI coordinates (`ui_resolutions=fhd`, 1920×1080); Roku scales for HD devices.
 - **No components beyond the base set:** no MarkupGrid or RowList (they animate focus), no Animation nodes, no Poster images in the UI, no fonts beyond system fonts.
