@@ -1,0 +1,6 @@
+#!/bin/sh
+# Bound to the Home key in sway: closes the streaming window, which brings the
+# launcher back. Does nothing if no streaming window is open.
+STATE="${XDG_STATE_HOME:-$HOME/.local/state}/amber"
+pkill -f -- "--user-data-dir=$STATE/player" 2>/dev/null
+exit 0

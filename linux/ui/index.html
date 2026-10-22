@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Amber</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main id="stage">
+    <section id="home">
+      <div class="brand">Amber</div>
+      <div class="net"><span id="netDot" class="dot"></span><span id="netLabel"></span></div>
+      <div class="heading recent-heading">Recent</div>
+      <div id="recentEmpty" class="secondary">Apps you open from this launcher will appear here.</div>
+      <div id="recentRow"></div>
+      <div class="heading apps-heading">Apps</div>
+      <div id="grid"></div>
+      <div id="message"></div>
+      <div class="hint">OK&nbsp;&nbsp;Open&emsp;&emsp;☰&nbsp;&nbsp;Menu&emsp;&emsp;Home&nbsp;&nbsp;Back to launcher</div>
+    </section>
+
+    <section id="settings" hidden>
+      <div class="brand">Settings</div>
+      <div id="menuBar" class="bar"></div>
+      <div id="menu"></div>
+      <div class="divider"></div>
+      <div id="panelHeading"></div>
+      <div id="panelBody"></div>
+      <div id="buttons"></div>
+      <div class="hint">Back&nbsp;&nbsp;Return</div>
+    </section>
+
+    <aside id="drawer" hidden>
+      <div class="drawer-title">Menu</div>
+      <div id="drawerBar" class="bar"></div>
+      <div id="drawerList"></div>
+    </aside>
+  </main>
+</body>
+</html>

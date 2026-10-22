@@ -22,4 +22,4 @@
 2. Verify channel ids with ECP `query/apps` and update the catalog. Add tiles only for verified ids.
 3. Fix anything the device run finds before adding features.
 4. Optional, small: let the user reorder or hide tiles (stored locally).
-5. Phase 7 decision. Requirement 9 ("complete launcher control") is **confirmed impossible** on Roku by the platform limits above. The external-device evaluation is in [LINUX_FEASIBILITY.md](LINUX_FEASIBILITY.md). It finds that no device meets every goal and recommends no purchase until the priorities are chosen and its pre-purchase checks are run.
+5. Phase 7 decision. Requirement 9 ("complete launcher control") is **confirmed impossible** on Roku by the platform limits above. The external-device evaluation is in [LINUX_FEASIBILITY.md](LINUX_FEASIBILITY.md). It finds that no device meets every goal and recommends no purchase until the priorities are chosen and its pre-purchase checks are run. A Linux version for a mini PC (the "desktop Linux" option) is now in [`linux/`](../linux/README.md).

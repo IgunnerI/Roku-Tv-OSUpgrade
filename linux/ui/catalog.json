@@ -1,0 +1,10 @@
+[
+    { "id": "netflix", "label": "Netflix", "kind": "web", "url": "https://www.netflix.com/browse", "note": "Website · 720p–1080p" },
+    { "id": "youtube", "label": "YouTube", "kind": "web", "url": "https://www.youtube.com/", "note": "Website" },
+    { "id": "prime", "label": "Prime Video", "kind": "web", "url": "https://www.primevideo.com/", "note": "Website · SD on Linux" },
+    { "id": "disney", "label": "Disney+", "kind": "web", "url": "https://www.disneyplus.com/", "note": "Website · up to 720p" },
+    { "id": "hulu", "label": "Hulu", "kind": "web", "url": "https://www.hulu.com/", "note": "Website · not supported" },
+    { "id": "network", "label": "Network check", "kind": "in_app", "target": "diagnostics" },
+    { "id": "privacy", "label": "Privacy", "kind": "in_app", "target": "privacy" },
+    { "id": "settings", "label": "Settings", "kind": "in_app", "target": "network" }
+]

@@ -1,0 +1,103 @@
+/* Amber design tokens: identical to the Roku app (docs/DESIGN.md). */
+:root {
+  --bg: #080808;
+  --text: #f2f0ea;
+  --text2: #969696;
+  --amber: #f2b84b;
+  --tile: #171717;
+  --border: #333333;
+}
+
+/* Static interface: nothing moves, ever. */
+*, *::before, *::after {
+  transition: none !important;
+  animation: none !important;
+  scroll-behavior: auto !important;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  cursor: none;
+  font-family: "Noto Sans", "DejaVu Sans", sans-serif;
+  user-select: none;
+}
+
+/* Fixed 1920x1080 stage; app.js scales it to the screen. */
+#stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: 0 0;
+}
+
+[hidden] { display: none !important; }
+
+#home, #settings { position: absolute; inset: 0; }
+
+.brand { position: absolute; left: 146px; top: 60px; font-size: 33px; font-weight: bold; }
+.heading, .secondary, .hint, #message, .drawer-title { position: absolute; font-size: 27px; color: var(--text2); }
+.recent-heading { left: 146px; top: 170px; }
+.apps-heading { left: 146px; top: 380px; }
+#recentEmpty { left: 146px; top: 236px; }
+#recentRow { position: absolute; left: 146px; top: 220px; }
+#grid { position: absolute; left: 146px; top: 430px; }
+#message { left: 146px; top: 900px; width: 1628px; color: var(--text); }
+.hint { left: 146px; top: 966px; white-space: pre; }
+
+.net { position: absolute; left: 1590px; top: 70px; font-size: 27px; color: var(--text2); }
+.dot { display: inline-block; width: 14px; height: 14px; margin-right: 12px; background: var(--border); }
+.net.offline { color: var(--text); }
+.net.offline .dot { background: var(--amber); }
+.net.online .dot { background: var(--text2); }
+
+/* Tiles: 2px subtle border, 5px amber ring when focused. */
+.tile {
+  position: absolute;
+  width: 380px;
+  background: var(--tile);
+  outline: 2px solid var(--border);
+}
+.tile.tall { height: 200px; }
+.tile.short { height: 110px; }
+.tile.focused { outline: 5px solid var(--amber); }
+.tile .name, .tile .note { position: absolute; left: 28px; right: 28px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile .name { font-size: 33px; }
+.tile .note { font-size: 25px; color: var(--text2); }
+.tile.tall .name { top: 96px; }
+.tile.tall .note { top: 146px; }
+.tile.short .name { top: 14px; }
+.tile.short .note { top: 60px; }
+
+/* Lists: 6px bar marks the current item. */
+.bar { position: absolute; width: 6px; height: 48px; background: var(--amber); }
+.bar.inactive { background: var(--border); }
+.item { position: absolute; height: 48px; line-height: 48px; font-size: 33px; color: var(--text2); }
+.item.current { color: var(--text); }
+
+#menu .item { left: 176px; }
+.divider { position: absolute; left: 640px; top: 170px; width: 2px; height: 760px; background: var(--border); }
+#panelHeading { position: absolute; left: 700px; top: 170px; font-size: 33px; font-weight: bold; }
+#panelBody { position: absolute; left: 700px; top: 240px; width: 1074px; height: 580px; overflow: hidden; font-size: 27px; line-height: 40px; white-space: pre-wrap; }
+#buttons { position: absolute; left: 700px; top: 850px; }
+.button {
+  position: absolute;
+  width: 360px;
+  height: 72px;
+  line-height: 72px;
+  text-align: center;
+  font-size: 27px;
+  background: var(--tile);
+  outline: 2px solid var(--border);
+}
+.button.focused { outline: 5px solid var(--amber); }
+
+#drawer { position: absolute; left: 0; top: 0; width: 482px; height: 1080px; background: var(--tile); border-right: 2px solid var(--border); }
+.drawer-title { left: 64px; top: 66px; }
+#drawerList .item { left: 64px; }

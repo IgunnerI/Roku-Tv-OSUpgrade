@@ -10,7 +10,9 @@
     "package": "sh scripts/package.sh",
     "check": "npm run lint && npm test && npm run audit:privacy && npm run audit:tokens",
     "deploy": "sh scripts/deploy.sh",
-    "audit:tokens": "node scripts/token-audit.mjs"
+    "audit:tokens": "node scripts/token-audit.mjs",
+    "linux:test": "python3 -m unittest discover -s linux/tests && node --test linux/tests/ui-lib.test.mjs",
+    "linux:e2e": "node linux/tests/e2e.mjs"
   },
   "devDependencies": {
     "brighterscript": "0.65.27",

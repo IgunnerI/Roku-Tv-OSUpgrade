@@ -1,0 +1,25 @@
+#!/bin/sh
+# Started by sway. Runs the local server, waits for it, then shows the
+# launcher fullscreen. If the launcher browser exits, it is started again.
+set -u
+AMBER_DIR=${AMBER_DIR:-/opt/amber}
+STATE="${XDG_STATE_HOME:-$HOME/.local/state}/amber"
+mkdir -p "$STATE"
+
+python3 "$AMBER_DIR/server/amber_server.py" &
+
+i=0
+until python3 -c 'import socket; socket.create_connection(("127.0.0.1", 8484), 0.2)' 2>/dev/null; do
+    i=$((i + 1))
+    [ "$i" -gt 50 ] && break
+    sleep 0.1
+done
+
+while true; do
+    # The launcher needs no DRM, sync or updates: background networking is off.
+    chromium --ozone-platform=wayland --kiosk --no-first-run --noerrdialogs \
+        --disable-session-crashed-bubble --disable-background-networking \
+        --disable-features=Translate,MediaRouter,OptimizationHints \
+        --user-data-dir="$STATE/launcher" http://127.0.0.1:8484/
+    sleep 1
+done

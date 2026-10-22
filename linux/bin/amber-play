@@ -1,0 +1,12 @@
+#!/bin/sh
+# Opens one streaming site fullscreen in its own Chromium profile (logins are
+# kept there). Only one player window exists at a time. Home closes it.
+set -u
+STATE="${XDG_STATE_HOME:-$HOME/.local/state}/amber"
+PROFILE="$STATE/player"
+"$(dirname "$0")/amber-home"
+# Hardware video decode (VA-API) is left at Chromium's default; see
+# linux/README.md before enabling it for your GPU.
+exec chromium --ozone-platform=wayland --kiosk --no-first-run --noerrdialogs \
+    --disable-session-crashed-bubble --disable-features=Translate,MediaRouter \
+    --user-data-dir="$PROFILE" "$1"

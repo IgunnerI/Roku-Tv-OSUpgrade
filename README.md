@@ -4,6 +4,8 @@ A minimal, static, privacy-first home screen for Roku TVs, built as a native Bri
 
 > **Status: prototype, not yet run on a Roku.** It lints cleanly, its logic passes 138 unit assertions off-device, and it passes static privacy and design audits. No screen, remote, network or performance behavior has been verified on hardware. See [docs/TEST_PLAN.md](docs/TEST_PLAN.md).
 
+**Also here: [Amber for Linux](linux/README.md)**, the same launcher for a mini PC plugged into the TV. It boots straight into Amber and gives full launcher control, at the cost of lower streaming quality on some services.
+
 ## What it is and isn't
 
 Roku channels can't replace Roku's home screen, intercept the Home button, or launch other channels. Amber is a channel that **acts as** a home screen once opened:

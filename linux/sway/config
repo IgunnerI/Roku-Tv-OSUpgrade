@@ -1,0 +1,18 @@
+# Amber kiosk session. No bar, no borders, no gaps; sway has no animations.
+output * bg #080808 solid_color
+default_border none
+default_floating_border none
+focus_follows_mouse no
+mouse_warping none
+seat * hide_cursor 3000
+
+# Every window is fullscreen: the launcher, or one streaming site on top of it.
+for_window [app_id=".*"] fullscreen enable
+
+# Home on a remote or keyboard returns to the launcher.
+bindsym --no-repeat XF86HomePage exec /opt/amber/bin/amber-home
+bindsym --no-repeat Home exec /opt/amber/bin/amber-home
+
+# No other bindings: nothing to escape into. Admin access is on tty2
+# (Ctrl+Alt+F2) or over SSH.
+exec /opt/amber/bin/amber-session
